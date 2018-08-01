@@ -5,7 +5,7 @@ To install the R package of PT from github:
 ```
 > install.packages("devtools")
 > library(devtools)
-> install_github("monajemi/CompressedSensing", subdir="PTpredictions/R/PT")
+> install_github("monajemi/CompressedSensing", subdir="PTtools/R/PT")
 > library(PT)
 
 > predictPT(1/2,'R')
