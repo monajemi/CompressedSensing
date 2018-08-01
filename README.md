@@ -1,7 +1,13 @@
 # PTpredictions
 These are codes for analytical predictions of Phase Transition in Compressed Sensing
 
-
+To install the R package of PT from github:
+```
+install.packages("devtools")
+library(devtools)
+install_github("monajemi/CompressedSensing", subdir="PTpredictions/R/PT")
+library(PT)
+```
 
 # Frames
 These are codes for construction of various frames that I have used in my publications 
