@@ -4,7 +4,7 @@
 % Date: June 12 2012
 % neps: number of epsilons 
 % delta : scalar determining the shape factor (undersampling)
-% flag: 'Real', 'Cplex', 'Pos' , 'Bnd'
+% flag: 'Real', 'Cplex', 'Pos' , 'Bnd', 'Q', 'O'
 % 
 function eps_0 = predictPT(delta, flag)
 
