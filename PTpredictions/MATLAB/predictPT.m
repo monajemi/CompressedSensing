@@ -1,11 +1,11 @@
-% 
-% Predict PT 
+% Predict Phase Transition of Ell1 minimization for Gaussian matrices 
 % Author: Hatef Monajemi 
 % Date: June 12 2012
-% neps: number of epsilons 
 % delta : scalar determining the shape factor (undersampling)
 % flag: 'Real', 'Cplex', 'Pos' , 'Bnd', 'Q', 'O'
-% 
+% Citation: "Deterministic matrices matching the compressed sensing phase transitions of Gaussian random matrices.", 
+% Monajemi et al., 2013 http://www.pnas.org/content/110/4/1181 
+
 function eps_0 = predictPT(delta, flag)
 
 PredPT = load('PredPT.mat');
