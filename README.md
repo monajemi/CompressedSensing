@@ -3,6 +3,9 @@ These are codes for construction of various frames that I have used in my public
 
 # Example: 
 ```
-% build a real DG frame of size 16x64
-A = buildFrame(16,16*4,'DG','R');
+% build a real USE matrix
+A = buildFrame(16,64,'USE','R');
+
+% build a Complex DG frame of size 32x1288
+A = buildFrame(32,32*4,'DG','C');
 ```
