@@ -1,4 +1,4 @@
-#PTpredictions
+# PTpredictions
 These are codes for analytical predictions of Phase Transition in Compressed Sensing
 
 
