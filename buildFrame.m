@@ -22,10 +22,16 @@ if nargin < 4, warning('the number of arguments must be at least 4'); end
 if nargin < 5 || isempty(qOperator), qOperator = 0; end
 
 
-
-
-
        switch ensembleCode,
+                case  'USE'
+                    if qOperator== 1
+                       error('Operator not supported for this case')
+                    else
+                       A = buildUSE(n,N,fieldCode);
+                    end  
+
+                
+                
                 case  'DG'
 
                 mex DG/gsm_mex.cpp
