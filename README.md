@@ -1,5 +1,5 @@
 # PTtools
-These are codes for analytical predictions of Phase Transition in Compressed Sensing
+These are codes for analytical predictions and various function for analysis of Phase Transition datasets in Compressed Sensing
 
 To install the R package of PT from github:
 ```
