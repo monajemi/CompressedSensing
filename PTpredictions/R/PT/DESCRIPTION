@@ -1,0 +1,11 @@
+Package: PT
+Type: Package
+Title: Analysis of compressed sensing Phase Transition data
+Version: 1.0
+Date: 2014-01-27
+Author: Hatef Monajemi 
+Maintainer: Hatef Monajemi <monajemi@stanford.edu>
+Description: Analysis of compressed sensing Phase Transition data
+License: LGPL >= 2.0
+LazyData: true
+LazyLoad: true 
