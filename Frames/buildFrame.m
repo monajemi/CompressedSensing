@@ -23,6 +23,12 @@ if nargin < 5 || isempty(qOperator), qOperator = 0; end
 
 
        switch ensembleCode,
+                case  'PETF'
+                    if qOperator== 1
+                        error('Operator not supported for this case');
+                    else
+                        A  = buildPaleyETF(n,N,fieldCode);
+                    end
                 case  'USE'
                     if qOperator== 1
                        error('Operator not supported for this case')
