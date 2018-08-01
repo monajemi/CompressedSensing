@@ -12,6 +12,13 @@ To install the R package of PT from github:
 [1] 0.1928448
 ```
 
+There is also a MATLAB version of this prediction.
+
+```
+>> predictPT(1/2,'R')
+```
+
+
 # Frames
 These are codes for construction of various frames that I have used in my publications 
 
