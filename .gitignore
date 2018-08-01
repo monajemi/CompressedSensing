@@ -1,3 +1,3 @@
 *~
-*.Rproj.user/*
-*.DS_Store*:
+PTtools/R/PT/.Rproj.user/*
+.DS_Store
