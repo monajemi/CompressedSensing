@@ -13,6 +13,9 @@ function  A = buildFrame(n, N, ensembleCode,fieldCode,qOperator,varargin);
 %
 %
 % Copyright 2012: Hatef Monajemi(monajemi@stanford.edu), David Donoho (donoho@stanford.edu)
+% Relevant Citation: "Deterministic matrices matching the compressed sensing phase transitions of Gaussian random matrices.", 
+% Monajemi et al., 2013 http://www.pnas.org/content/110/4/1181 
+
 
 % add path to all subdirectories
 addpath(genpath('.'))
