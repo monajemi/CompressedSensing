@@ -22,6 +22,25 @@ There is also a MATLAB version of this prediction.
 # Frames
 These are codes for construction of various frames that I have used in my publications 
 
+main function
+```
+function  A = buildFrame(n, N, ensembleCode,fieldCode,qOperator,varargin);
+% Function: buildFrame.m
+% builds desired frame according to information given as input.
+%
+% input:
+% n: # rows
+% N: # columns
+% ensembleCode: the code for the desired ensemble e.g., 'DG'
+% fieldCode: 'R','C','R+'
+% qOperator: if set to 1, then an operator A is built for fast calculation of Ax and A'x.
+%            if set to 0 (default), frame is explicitly built
+% varargin:
+% LDPC: 
+%   varargin{1}:column degree
+%   varargin{2}:sglConcent (0: strict regularity, 1:best-effort)
+```
+
 # Example: 
 ```
 % build a real USE matrix
