@@ -27,6 +27,21 @@ if nargin < 5 || isempty(qOperator), qOperator = 0; end
 
        switch ensembleCode,
 
+                case 'LDPC'
+                    if length(varargin) ~= 1
+                        error('please enter the column degree of the LDPC matrix')
+                    end
+                    % LDPC needs mex on cluster
+                    mex LDPC/GenerateLDPC_mex.C LDPC/BigGirth.C LDPC/CyclesOfGraph.C LDPC/Random.C LDPC/GenerateLDPC.C
+
+                    
+
+                    if qOperator== 1
+                        error('Not Available');
+                    else
+                        % Only real matrix
+                        A = buildLDPCmatrix(n,N,varargin{1});
+                    end
 
                 case  'LC'
                     if qOperator== 1
