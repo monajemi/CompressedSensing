@@ -14,7 +14,7 @@
 void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]){
 
 //declare variables
-int M, N, d;
+int M, N, d, sglConcent;
 char* codeName;
 int StrLength;
 bool output;
@@ -25,13 +25,16 @@ M = (int) mxGetScalar(prhs[0]);
 N = (int) mxGetScalar(prhs[1]);
 d = (int) mxGetScalar(prhs[3]);
 
+// get the required regularity strictness
+sglConcent = (int) mxGetScalar(prhs[4]);
+
 //Get the string codeName
 StrLength=mxGetN(prhs[2])+1;
 codeName=(char*) mxCalloc(StrLength,sizeof(char));
 mxGetString(prhs[2], codeName, StrLength);
 
 //Call GenerateLDPC.C
-GenerateLDPC(M, N, codeName, d);
+GenerateLDPC(M, N, codeName, d,sglConcent);
 
 
 mxFree(codeName);

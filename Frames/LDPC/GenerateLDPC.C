@@ -20,7 +20,7 @@ using namespace std;
  * M = number of rows
  * N = number of columns
 */
-bool GenerateLDPC(int M, int N, char* codeName, int d){
+bool GenerateLDPC(int M, int N, char* codeName, int d,int sglConcent){
 
 // Check the size of graph 
 assert( M < N && "M must be smaller than N");
@@ -36,7 +36,10 @@ for(int i=0;i<N; ++i){
 degSeq[i] = d;
 }
 
-int sglConcent=1;  // default to non-strictly concentrated parity-check distribution
+// default to non-strictly concentrated parity-check distribution
+// This is now given as a user input
+//int sglConcent=1;  
+
 int targetGirth=100000; // default to greedy PEG version 
   
 BigGirth *bigGirth = new BigGirth(M, N, degSeq, codeName, sglConcent, targetGirth);

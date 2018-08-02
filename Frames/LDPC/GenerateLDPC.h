@@ -20,7 +20,7 @@ using namespace std;
  * N = number of columns
  * d = degree of regular graph
 */
-bool GenerateLDPC(int M, int N, char *  codeName, int d);
+bool GenerateLDPC(int M, int N, char *  codeName, int d, int sglConcent);
 
 
 #endif

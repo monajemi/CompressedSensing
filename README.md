@@ -29,6 +29,16 @@ A = buildFrame(16,64,'USE','R');
 
 % build a Complex DG frame of size 32x1288
 A = buildFrame(32,32*4,'DG','C');
+
+
+% build 'non-strictly' regular (best effort) LDPC matrices of degree 3
+A = buildFrame(504,1008, 'LDPC','R',[],3,1);
+A = buildFrame(504,1008, 'LDPC','R',[],3);
+
+
+% build 'strictly' regular LDPC matrices of degree 3
+A = buildFrame(504,1008, 'LDPC','R',[],3,0);
+
 ```
 
 

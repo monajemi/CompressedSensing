@@ -21,12 +21,20 @@
 % N: number of columns
 % d: Symbol degree of regular PEG Tanner graph(number of 1's in
 %    each column)
+% sglConcent =0 strictly regular
+% sglConcent =1 best effort (row weights can vary)
+%
 % LDPCmat = LDPC matrix
+%
 
-function LDPCmat = buildLDPCmatrix(M,N,d);
+function LDPCmat = buildLDPCmatrix(M,N,d,sglConcent);
+
+if nargin < 4
+    sglConcent = 1
+end
 
 codeName = ['regTannerGraph-M',num2str(M),'-N',num2str(N),'-d',num2str(d),'.txt'];
-GenerateLDPC_mex(M,N,codeName,d);
+GenerateLDPC_mex(M,N,codeName,d,sglConcent);
 LDPCmat = ReadTannerGraph(codeName);
 
 end

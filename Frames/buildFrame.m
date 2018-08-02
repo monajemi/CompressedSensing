@@ -10,6 +10,9 @@ function  A = buildFrame(n, N, ensembleCode,fieldCode,qOperator,varargin);
 % qOperator: if set to 1, then an operator A is built for fast calculation of Ax and A'x.
 %            if set to 0 (default), frame is explicitly built
 % varargin:
+% LDPC: 
+%   varargin{1}:column degree
+%   varargin{2}:sglConcent (0: strict regularity, 1:best-effort)
 %
 %
 % Copyright 2012: Hatef Monajemi(monajemi@stanford.edu), David Donoho (donoho@stanford.edu)
@@ -35,9 +38,11 @@ if nargin < 5 || isempty(qOperator), qOperator = 0; end
                     end
 
                 case 'LDPC'
-                    if length(varargin) ~= 1
+                    if length(varargin) < 1
                         error('please enter the column degree of the LDPC matrix')
                     end
+                    
+                    
                     % LDPC needs mex on cluster
                     mex LDPC/GenerateLDPC_mex.C LDPC/BigGirth.C LDPC/CyclesOfGraph.C LDPC/Random.C LDPC/GenerateLDPC.C
 
@@ -47,7 +52,14 @@ if nargin < 5 || isempty(qOperator), qOperator = 0; end
                         error('Not Available');
                     else
                         % Only real matrix
-                        A = buildLDPCmatrix(n,N,varargin{1});
+                        if (length(varargin) == 2)
+                            if ~ ( varargin{2} == 0 || varargin{2} == 1)
+                                error('sglConcent must be 0 or 1. 0: strictly regular, 1:best effort')
+                            end
+                            A = buildLDPCmatrix(n,N,varargin{1},varargin{2});
+                        else
+                            A = buildLDPCmatrix(n,N,varargin{1});
+                        end    
                     end
 
                 case  'LC'
