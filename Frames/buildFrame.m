@@ -27,6 +27,15 @@ if nargin < 5 || isempty(qOperator), qOperator = 0; end
 
        switch ensembleCode,
 
+
+                case  'LC'
+                    if qOperator== 1
+                    error('Not yet implemented');
+                    else
+                    A = buildLinearChirpFrame(n,N,fieldCode);
+                    end
+
+
                 case  'GF'
                     if qOperator== 1
                     error('Not yet implemented');
