@@ -26,6 +26,14 @@ if nargin < 5 || isempty(qOperator), qOperator = 0; end
 
 
        switch ensembleCode,
+
+                case  'GF'
+                    if qOperator== 1
+                    error('Not yet implemented');
+                    else
+                        A = buildGrassmannianFrame(n,N,fieldCode);
+                    end
+
                 case  'PETF'
                     if qOperator== 1
                         error('Operator not supported for this case');
