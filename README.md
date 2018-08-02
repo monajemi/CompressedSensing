@@ -22,7 +22,7 @@ There is also a MATLAB version of this prediction.
 # Frames
 These are codes for construction of various frames that I have used in my publications 
 
-main function
+## main function
 ```
 function  A = buildFrame(n, N, ensembleCode,fieldCode,qOperator,varargin);
 % Function: buildFrame.m
@@ -41,7 +41,7 @@ function  A = buildFrame(n, N, ensembleCode,fieldCode,qOperator,varargin);
 %   varargin{2}:sglConcent (0: strict regularity, 1:best-effort)
 ```
 
-# Example: 
+## Examples: 
 ```
 % build a real USE matrix
 A = buildFrame(16,64,'USE','R');
