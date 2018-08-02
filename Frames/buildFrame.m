@@ -27,6 +27,13 @@ if nargin < 5 || isempty(qOperator), qOperator = 0; end
 
        switch ensembleCode,
 
+                case  'Gaussian'
+                    if qOperator== 1
+                        error('Operator not supported for this case')
+                    else
+                        A = buildGaussian(n,N,fieldCode);
+                    end
+
                 case 'LDPC'
                     if length(varargin) ~= 1
                         error('please enter the column degree of the LDPC matrix')
