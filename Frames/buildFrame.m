@@ -18,6 +18,22 @@ function  A = buildFrame(n, N, ensembleCode,fieldCode,qOperator,varargin);
 % Copyright 2012: Hatef Monajemi(monajemi@stanford.edu), David Donoho (donoho@stanford.edu)
 % Relevant Citation: "Deterministic matrices matching the compressed sensing phase transitions of Gaussian random matrices.", 
 % Monajemi et al., 2013 http://www.pnas.org/content/110/4/1181 
+%
+%
+% Examples: 
+%% build a real USE matrix
+% A = buildFrame(16,64,'USE','R');
+%
+%% build Exapander of col degree 7
+% A = buildFrame(100,300,'Expander','R',[],7);
+%
+%% build 'non-strictly' regular (best effort) LDPC matrices of degree 3
+% A = buildFrame(504,1008, 'LDPC','R',[],3,1);
+% A = buildFrame(504,1008, 'LDPC','R',[],3);
+%
+%% build 'strictly' regular LDPC matrices of degree 3
+% A = buildFrame(504,1008, 'LDPC','R',[],3,0);
+
 
 
 % add path to all subdirectories
@@ -36,6 +52,14 @@ if nargin < 5 || isempty(qOperator), qOperator = 0; end
                     else
                         A = buildGaussian(n,N,fieldCode);
                     end
+
+
+                case 'Expander'
+                if length(varargin) < 1
+                    error('please enter the column degree of the Exapnder matrix')
+                end
+                A = buildExpander(n,N,fieldCode,varargin{1});
+
 
                 case 'LDPC'
                     if length(varargin) < 1
