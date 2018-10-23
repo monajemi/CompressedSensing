@@ -46,6 +46,26 @@ if nargin < 5 || isempty(qOperator), qOperator = 0; end
 
        switch ensembleCode,
 
+                case  'array-pc'
+                    if length(varargin) < 1
+                        error('please set the column degree of the array parity check matrix to more than 0 and less than sqrt(n)')
+                    else
+                        A = Array_Parity_Check_Matrix(N,varargin{1});
+                    end
+                
+                case  'devore'
+                    if isprime(varargin)==0 %%column weight must be a prime number, n=(coulmn_weight)^2 and N<=(coulmn_weight)^3 
+                        error('please set the column degree of the devore matrix to a prime number that is more than 1')
+                    else
+                         if varargin>=sqrt(N) or varargin< cbrt(N)
+                              error('please set the column degree of the devore matrix to less than square root of N and greater than or equal to cube root of N')
+                         else
+                              B = DeVore_Exp(varargin{1},N);
+                              A = B_to_A(B);
+                         end
+                    end
+                
+                
                 case  'Gaussian'
                     if qOperator== 1
                         error('Operator not supported for this case')
