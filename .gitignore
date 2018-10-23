@@ -2,3 +2,6 @@
 PTtools/R/PT/.Rproj.user/*
 .DS_Store
 DEP/*
+Frames/regTannerGraph-*
+*.log
+
