@@ -57,7 +57,7 @@ if nargin < 5 || isempty(qOperator), qOperator = 0; end
                     if isprime(varargin)==0 %%column weight must be a prime number, n=(coulmn_weight)^2 and N<=(coulmn_weight)^3 
                         error('please set the column degree of the devore matrix to a prime number that is more than 1')
                     else
-                         if varargin>=sqrt(N) or varargin< cbrt(N)
+                         if varargin>=sqrt(N) or varargin< nthroot(N,3)
                               error('please set the column degree of the devore matrix to less than square root of N and greater than or equal to cube root of N')
                          else
                               B = DeVore_Exp(varargin{1},N);
