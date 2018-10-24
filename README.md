@@ -36,7 +36,7 @@ function  A = buildFrame(n, N, ensembleCode,fieldCode,qOperator,varargin);
 % qOperator: if set to 1, then an operator A is built for fast calculation of Ax and A'x.
 %            if set to 0 (default), frame is explicitly built
 % varargin:
-% LDPC and devore/array_pc: 
+% PEG-LDPC and devore/array_pc: 
 %   varargin{1}:column degree
 %   varargin{2}:sglConcent (0: strict regularity, 1:best-effort)
 ```
