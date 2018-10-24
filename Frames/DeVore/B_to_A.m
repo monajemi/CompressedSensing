@@ -1,6 +1,6 @@
 %%This function recieves the matrix of indices, "B", as the input and gives us
 %%the measurement map, "A" which is the binary version of the DeVore's
-%%construction. "A" has the dimensionality equal to "q^2*n".
+%%construction. "A" is (q^2)xn.
 function A = B_to_A(B)
 
 S = size(B) ;

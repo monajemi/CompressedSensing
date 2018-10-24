@@ -1,6 +1,6 @@
 %%This file contains implementation of the Array code parity check matrix
 %%which has the girth equal to 6.The matrix has the dimesionality equal to 
-%%m*q^2 in which m=jq. Parameter "j" shows the column-weight of the matrix.
+%%mx(q^2) in which m=jq. Parameter "j" shows the column-weight of the matrix.
 
 
 function H = Array_Parity_Check_Matrix(n,j) 

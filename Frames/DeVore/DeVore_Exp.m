@@ -2,7 +2,7 @@
 % and each element of B belongs to the prime number field Z/(q). "n" is the
 % dimension of the unknown vector "x" and should be less than "q^3+1"
 % Note: Matrix "B" holds the indices of ones in each block of each column so
-% it is not binary and it has vlues from 0:q-1.
+% it is not binary and it has values from 0:q-1.
 
 function B = DeVore_Exp(q , n)
 

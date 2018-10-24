@@ -36,7 +36,7 @@ function  A = buildFrame(n, N, ensembleCode,fieldCode,qOperator,varargin);
 % qOperator: if set to 1, then an operator A is built for fast calculation of Ax and A'x.
 %            if set to 0 (default), frame is explicitly built
 % varargin:
-% LDPC: 
+% LDPC and devore/array_pc: 
 %   varargin{1}:column degree
 %   varargin{2}:sglConcent (0: strict regularity, 1:best-effort)
 ```
@@ -58,9 +58,17 @@ A = buildFrame(504,1008, 'LDPC','R',[],3);
 % build 'strictly' regular LDPC matrices of degree 3
 A = buildFrame(504,1008, 'LDPC','R',[],3,0);
 
+% build a Devore matrix of size (q^2)x20 with coulmn degree q=3 
+A = buildFrame(9,20,'devore',[],[],3)
+
+% build an array parity check matrix of size (j*q)xq^2 for j=3 and q=5;
+A = buildFrame(5*3,5^2,'array-pc',[],[],3)
+
 ```
 
 
 ## References: 
 
 "Deterministic matrices matching the compressed sensing phase transitions of Gaussian random matrices", Monajemi et al. 2013
+
+"Compressed Sensing Using Binary Matrices of Nearly Optimal Dimensions", Mahsa Lotfi and Mathukumalli Vidyasagar, arXiv: 1808.03001

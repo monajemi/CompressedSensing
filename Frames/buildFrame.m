@@ -10,7 +10,7 @@ function  A = buildFrame(n, N, ensembleCode,fieldCode,qOperator,varargin);
 % qOperator: if set to 1, then an operator A is built for fast calculation of Ax and A'x.
 %            if set to 0 (default), frame is explicitly built
 % varargin:
-% LDPC: 
+% LDPC and devore/array_pc: 
 %   varargin{1}:column degree
 %   varargin{2}:sglConcent (0: strict regularity, 1:best-effort)
 %
@@ -48,16 +48,26 @@ if nargin < 5 || isempty(qOperator), qOperator = 0; end
 
                 case  'array-pc'
                     if length(varargin) < 1
-                        error('please set the column degree of the array parity check matrix to more than 0 and less than sqrt(n)')
+                        error('please set the column degree of the array parity check matrix to more than 0 and less than sqrt(N)')
+                    elseif(isprime(sqrt(N))==0) ;
+                        error ('N must be square of a prime')
+                    elseif(varargin{1}*sqrt(N)~=n) ;
+                        error ('n must be j*sqrt(N) where j=vargargin{1} (col weight). ')    
                     else
                         A = Array_Parity_Check_Matrix(N,varargin{1});
                     end
                 
                 case  'devore'
-                    if isprime(varargin)==0 %%column weight must be a prime number, n=(coulmn_weight)^2 and N<=(coulmn_weight)^3 
+                    if length(varargin) < 1
+                        error('please set the column degree of the array parity check matrix to more than 0 and less than sqrt(n)')
+                    end
+                    if isprime(varargin{1})==0 %%column weight must be a prime number, n=(coulmn_weight)^2 and N<=(coulmn_weight)^3 
                         error('please set the column degree of the devore matrix to a prime number that is more than 1')
+                    elseif (n ~= varargin{1}^2)
+                        error('For DeVore Matrices n = q^2 where q is the column degree')    
+                        
                     else
-                         if varargin>=sqrt(N) or varargin< nthroot(N,3)
+                         if varargin{1}>=sqrt(N) || varargin{1} < nthroot(N,3)
                               error('please set the column degree of the devore matrix to less than square root of N and greater than or equal to cube root of N')
                          else
                               B = DeVore_Exp(varargin{1},N);
