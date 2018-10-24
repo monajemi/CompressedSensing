@@ -69,6 +69,6 @@ A = buildFrame(5*3,5^2,'array-pc',[],[],3)
 
 ## References: 
 
-"Deterministic matrices matching the compressed sensing phase transitions of Gaussian random matrices", Monajemi et al. 2013. [Download](www.pnas.org/content/110/4/1181)
+"Deterministic matrices matching the compressed sensing phase transitions of Gaussian random matrices", Monajemi et al. 2013. [Download](http://www.pnas.org/content/110/4/1181)
 
 "Compressed Sensing Using Binary Matrices of Nearly Optimal Dimensions", Mahsa Lotfi and Mathukumalli Vidyasagar, [arXiv: 1808.03001](https://arxiv.org/abs/1808.03001)
