@@ -1,5 +1,5 @@
-\name{estimateEps0}
-\alias{estimateEps0}
+\name{predictPT}
+\alias{predictPT}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Ell_1 Phase Transition for Gaussian Matrices
